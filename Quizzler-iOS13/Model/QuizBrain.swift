@@ -26,6 +26,7 @@ struct QuizBrain {
        ]
     
     var questionNumber = 0
+    var score = 0
     
     func checkAnswer(_ userAnswer: String) -> Bool {
         if userAnswer == quiz[questionNumber].answer {
@@ -44,7 +45,7 @@ struct QuizBrain {
         return progress
     }
     
-    func nextQuestion() {
+    mutating func nextQuestion() {
         if questionNumber + 1 < quiz.count {
             questionNumber += 1
         } else {
